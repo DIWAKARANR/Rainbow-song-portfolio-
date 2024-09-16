@@ -1,0 +1,93 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    height: 100%;
+    background-color: #000;
+}
+
+.rainbow-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-size: 400% 400%;
+    animation: rainbowDance 10s ease infinite;
+    z-index: -2;
+}
+
+@keyframes rainbowDance {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+
+.rainbow-text {
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbowText 5s linear infinite;
+    background-size: 200% auto;
+}
+
+@keyframes rainbowText {
+    to { background-position: 200% center; }
+}
+
+.rainbow-card {
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8);
+    background-size: 400% 400%;
+    animation: rainbowCard 10s ease infinite;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+}
+
+@keyframes rainbowCard {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.rainbow-card:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 0 30px rgba(255,255,255,0.5);
+}
+
+.star {
+    position: absolute;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8);
+    border-radius: 50%;
+    animation: starFall linear infinite, starTwinkle 1s ease-in-out infinite alternate;
+}
+
+@keyframes starFall {
+    to { transform: translateY(100vh) rotate(540deg); }
+}
+
+@keyframes starTwinkle {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
